@@ -22,10 +22,21 @@ const inicializaBotones = () => {
       muestraNumeroActualEnElH1();
     });
   }
+
   const botonReset = document.getElementById("reset");
   if (botonReset instanceof HTMLButtonElement) {
     botonReset.addEventListener("click", () => {
       numeroActual = 0;
+      muestraNumeroActualEnElH1();
+    });
+  }
+
+  const botonCambiar = document.getElementById("cambiar");
+  if (botonCambiar instanceof HTMLButtonElement) {
+    botonCambiar.addEventListener("click", () => {
+      const numeroEspecificoInput = document.getElementById("numeroEspecifico");
+      if (numeroEspecificoInput instanceof HTMLInputElement)
+        numeroActual = parseInt(numeroEspecificoInput.value);
       muestraNumeroActualEnElH1();
     });
   }
